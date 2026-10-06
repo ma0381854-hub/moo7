@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<title>Mohamed Ahmed Abdelaziz — SOC Analyst</title>
+<style>
+:root{--bg:#07111f;--ink:#e6f1f7;--dim:#8aa3b5;--cyan:#3fd0e0;--amber:#ffb347;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 70% 35%,#0d2a40 0%,#07111f 55%,#040a13 100%) fixed;color:var(--ink);font-family:"Segoe UI",system-ui,sans-serif;min-height:100vh;overflow-x:hidden}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+main{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:space-between;gap:40px;padding:48px clamp(20px,8vw,120px);max-width:1200px;flex-wrap:wrap-reverse}
+.txt{flex:1 1 420px;max-width:680px}
+.photo{width:clamp(180px,26vw,320px);aspect-ratio:1;border-radius:50%;object-fit:cover;border:2px solid var(--cyan);box-shadow:0 0 0 8px rgba(63,208,224,.08),0 0 40px rgba(63,208,224,.25)}
+.status{display:flex;align-items:center;gap:10px;color:var(--dim);font:14px "Consolas",monospace}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35}}
+h1{font-size:clamp(2.6rem,8vw,5.2rem);margin:.3em 0 .1em;letter-spacing:-.02em;line-height:1}
+p.role{font-size:clamp(1rem,2.2vw,1.25rem);line-height:1.5;color:var(--cyan);margin:0 0 1.2em}
+p.sum{max-width:58ch;color:#b9cbd8;line-height:1.7;margin:0;font-size:clamp(.95rem,1.8vw,1.08rem)}
+.box{margin-top:28px;max-width:640px;padding:20px 24px 24px;border:1px solid rgba(63,208,224,.35);border-radius:10px;background:rgba(7,17,31,.7);backdrop-filter:blur(4px);animation:boxin .9s cubic-bezier(.2,.7,.2,1) .2s both,glow 2.4s ease-out .2s 1}
+.box h2{margin:0 0 12px;font-size:1.15rem;font-weight:600;color:var(--cyan)}
+.box p.sum{max-width:none}
+@keyframes boxin{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes glow{0%{box-shadow:0 0 0 0 rgba(63,208,224,.6)}60%{box-shadow:0 0 28px 4px rgba(63,208,224,.25)}100%{box-shadow:0 0 0 0 rgba(63,208,224,0)}}
+@media (prefers-reduced-motion:reduce){.box{animation:none}}
+#about{position:relative;z-index:1;padding:40px clamp(20px,8vw,120px) 140px;max-width:1200px}
+.abox{max-width:640px;padding:20px 24px 24px;border:1px solid rgba(63,208,224,.35);border-radius:10px;background:rgba(7,17,31,.7);backdrop-filter:blur(4px);opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.abox.in{opacity:1;transform:none;animation:glow 2.4s ease-out 1}
+.abox h2{margin:0 0 12px;font-size:1.15rem;font-weight:600;color:var(--cyan)}
+.abox p{margin:0;color:#b9cbd8;line-height:1.7;font-size:clamp(.95rem,1.8vw,1.08rem)}
+#ar{visibility:hidden}
+#at::after{content:'';display:inline-block;width:.55em;height:1.05em;background:var(--cyan);vertical-align:-.15em;margin-left:2px;animation:bl 1s steps(1) infinite}
+.abox.done #at::after{opacity:0;animation:none}
+@media (prefers-reduced-motion:reduce){.abox{transition:none}#at::after{animation:none}}
+#skills{position:relative;z-index:1;padding:20px clamp(20px,8vw,120px) 160px;max-width:1200px;font-family:"Space Grotesk","Segoe UI",system-ui,sans-serif}
+.sk-title{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:700;letter-spacing:-.02em;margin:0 0 36px}
+.sk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:36px 40px}
+.grp{position:relative;padding-top:18px}
+.grp::before{content:'';position:absolute;top:0;left:0;height:2px;width:100%;background:linear-gradient(90deg,var(--cyan),transparent);transform:scaleX(0);transform-origin:left;transition:transform 1s cubic-bezier(.6,0,.2,1) calc(var(--g)*.25s)}
+.grp h3{margin:0 0 16px;font-size:1.05rem;font-weight:600;color:var(--cyan)}
+.grp ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:7px 13px;border:1px solid rgba(63,208,224,.3);border-radius:4px;font-size:.92rem;font-weight:500;color:var(--ink);background:rgba(7,17,31,.6);opacity:0}
+#skills.in .grp::before{transform:none}
+#skills.in .chip{animation:boot .6s ease both;animation-delay:calc(var(--g,0)*0s + var(--i)*80ms + .3s)}
+@keyframes boot{0%{opacity:0;transform:scale(.6);background:rgba(63,208,224,.9);color:#07111f}45%{opacity:1;transform:scale(1.08);background:rgba(63,208,224,.9);color:#07111f}100%{opacity:1;transform:none;background:rgba(7,17,31,.6);color:var(--ink)}}
+@media (prefers-reduced-motion:reduce){.chip{opacity:1}#skills.in .chip{animation:none}.grp::before{transform:none;transition:none}}
+.divider{position:relative;z-index:1;padding:28px clamp(20px,8vw,120px);max-width:1200px}
+.divider .ln{display:block;position:relative;height:1px;max-width:1000px;background:linear-gradient(90deg,rgba(63,208,224,.6),rgba(63,208,224,.04));transform:scaleX(0);transform-origin:left;transition:transform 1.2s cubic-bezier(.6,0,.2,1)}
+.divider.in .ln{transform:none}
+.divider b{position:absolute;left:0;top:-3px;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);opacity:0}
+.divider.in b{animation:run 1.6s cubic-bezier(.6,0,.2,1) .1s both}
+@keyframes run{0%{left:0;opacity:1}85%{opacity:1}100%{left:calc(100% - 7px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.divider .ln{transform:none;transition:none}.divider.in b{animation:none}}
+.box{transition:box-shadow .35s ease,border-color .35s ease,background .35s ease}
+.abox{transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease,border-color .35s ease,background .35s ease}
+.chip{transition:box-shadow .3s ease,border-color .3s ease}
+.photo{transition:box-shadow .4s ease}
+.grp h3{transition:text-shadow .3s ease}
+.box:hover,.abox.in:hover{border-color:rgba(63,208,224,.85);background:rgba(10,26,44,.78);box-shadow:0 0 0 1px rgba(63,208,224,.25),0 0 32px rgba(63,208,224,.28),inset 0 0 24px rgba(63,208,224,.06)}
+.chip:hover{border-color:var(--cyan);box-shadow:0 0 14px rgba(63,208,224,.55)}
+.grp:hover h3{text-shadow:0 0 14px rgba(63,208,224,.7)}
+.photo:hover{box-shadow:0 0 0 8px rgba(63,208,224,.16),0 0 56px rgba(63,208,224,.5)}
+@media (prefers-reduced-motion:reduce){.box,.abox,.chip,.photo,.grp h3{transition:none}}
+#r{visibility:hidden}
+#t::after{content:'';display:inline-block;width:.55em;height:1.05em;background:var(--cyan);vertical-align:-.15em;margin-left:2px;animation:bl 1s steps(1) infinite}
+.done #t::after{animation:bl 1s steps(1) 3,none;opacity:0}
+@keyframes bl{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.dot,#t::after{animation:none}}
+#edu{position:relative;z-index:1;padding:20px clamp(20px,8vw,120px) 160px;max-width:1200px;font-family:"Space Grotesk","Segoe UI",system-ui,sans-serif}
+.edu-entry{position:relative;max-width:720px;padding:18px 0 40px 28px;border-left:1px solid rgba(63,208,224,.35)}
+.edu-entry::before{content:'';position:absolute;left:-5px;top:24px;width:9px;height:9px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.edu-entry:last-of-type{padding-bottom:0}
+.edu-when{margin:0 0 6px;color:var(--dim);font-size:.95rem}
+.edu-entry h3{margin:0 0 4px;font-size:1.25rem;font-weight:600;color:var(--ink)}
+.edu-school{margin:0 0 16px;color:var(--cyan);font-size:1rem}
+.edu-entry ul{margin:0;padding:0 0 0 1.1em;color:#b9cbd8;line-height:1.7;font-size:clamp(.95rem,1.8vw,1.05rem);max-width:62ch}
+.edu-entry li+li{margin-top:6px}
+.edu-entry li::marker{color:var(--cyan)}
+#edu .edu-entry{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+#edu.in .edu-entry{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){#edu .edu-entry{opacity:1;transform:none;transition:none}}
+#labs{position:relative;z-index:1;padding:20px clamp(20px,8vw,120px) 160px;max-width:1200px;font-family:"Space Grotesk","Segoe UI",system-ui,sans-serif}
+.lab{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start;max-width:980px;opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+#labs.in .lab{opacity:1;transform:none}
+.term{flex:1 1 300px;max-width:420px;margin:0;padding:16px 18px;border:1px solid rgba(63,208,224,.35);border-radius:10px;background:rgba(7,17,31,.75);font:13px/1.8 "Consolas",monospace;color:var(--dim);overflow-x:auto;white-space:pre}
+.term .ok{color:var(--cyan)}
+.term .warn{color:var(--amber)}
+.lab-body{flex:1 1 360px;max-width:560px}
+.lab-body h3{margin:0 0 12px;font-size:1.25rem;font-weight:600;color:var(--ink)}
+.lab-body p{margin:0 0 14px;color:#b9cbd8;line-height:1.7;font-size:clamp(.95rem,1.8vw,1.05rem)}
+.lab-body ul.pts{margin:0 0 18px;padding:0 0 0 1.1em;color:#b9cbd8;line-height:1.7;font-size:clamp(.95rem,1.8vw,1.05rem)}
+.lab-body ul.pts li+li{margin-top:6px}
+.lab-body ul.pts li::marker{color:var(--cyan)}
+.tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.tags li{padding:6px 12px;border:1px solid rgba(63,208,224,.3);border-radius:4px;font-size:.9rem;font-weight:500;background:rgba(7,17,31,.6)}
+@media (prefers-reduced-motion:reduce){.lab{opacity:1;transform:none;transition:none}}
+#certs{position:relative;z-index:1;padding:20px clamp(20px,8vw,120px) 160px;max-width:1200px;font-family:"Space Grotesk","Segoe UI",system-ui,sans-serif}
+.cert{display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start;max-width:1000px;opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+#certs.in .cert{opacity:1;transform:none}
+.cert-img{flex:1 1 340px;max-width:460px;width:100%;height:auto;border:1px solid rgba(63,208,224,.35);border-radius:10px;box-shadow:0 0 30px rgba(63,208,224,.12)}
+.cert-body{flex:1 1 320px;max-width:520px}
+.cert-body h3{margin:0 0 4px;font-size:1.25rem;font-weight:600;color:var(--ink)}
+.cert-place{margin:0 0 6px;color:var(--cyan)}
+.cert-when{margin:0 0 20px;color:var(--dim);font-size:.95rem}
+.cert-body h4{margin:0 0 10px;font-size:.95rem;font-weight:600;color:var(--dim)}
+.cert-body .tags{margin-bottom:20px}
+.cert-soft{margin:0;color:#b9cbd8;line-height:1.7;font-size:clamp(.95rem,1.8vw,1.05rem)}
+@media (prefers-reduced-motion:reduce){.cert{opacity:1;transform:none;transition:none}}
+#contact{position:relative;z-index:1;padding:20px clamp(20px,8vw,120px) 80px;max-width:1200px;font-family:"Space Grotesk","Segoe UI",system-ui,sans-serif}
+.ct-lead{max-width:56ch;margin:-12px 0 28px;color:#b9cbd8;line-height:1.7;font-size:clamp(.95rem,1.8vw,1.08rem)}
+.ct-list{display:flex;flex-direction:column;gap:14px;max-width:520px}
+.ct{display:flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid rgba(63,208,224,.3);border-radius:10px;background:rgba(7,17,31,.7);color:var(--ink);text-decoration:none;transition:border-color .3s ease,box-shadow .3s ease}
+.ct:hover,.ct:focus-visible{border-color:var(--cyan);box-shadow:0 0 22px rgba(63,208,224,.3);outline:none}
+.ico{flex:none;width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(63,208,224,.4);border-radius:8px;color:var(--cyan)}
+.ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ct-t{display:flex;flex-direction:column;min-width:0}
+.ct-t b{font-weight:600;font-size:.95rem}
+.ct-t span{color:var(--dim);font-size:.95rem;overflow-wrap:anywhere}
+.foot{position:relative;z-index:1;padding:0 clamp(20px,8vw,120px) 40px;color:var(--dim);font-size:.85rem}
+</style>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<main>
+  <div class="txt">
+    <div class="status"><span class="dot"></span><span id="log">monitoring network…</span></div>
+    <h1>Mohamed Ahmed Abdelaziz</h1>
+    <p class="role">Cyber Security Analyst — Blue Team, SOC Operations &amp; Threat Detection</p>
+    <section class="box">
+      <h2>Summary</h2>
+      <p class="sum" id="sum" aria-label="SOC Analyst with a solid foundation in cyber security, networking, and threat detection, backed by CCNA and CCNP Enterprise certification. Hands-on with routing, switching, and network security through Cisco Packet Tracer and GNS3, and building practical blue-team skills through SIEM tools, log analysis, and incident response labs. Focused on identifying and responding to threats with clear, structured analysis."><span id="t" aria-hidden="true"></span><span id="r" aria-hidden="true">SOC Analyst with a solid foundation in cyber security, networking, and threat detection, backed by CCNA and CCNP Enterprise certification. Hands-on with routing, switching, and network security through Cisco Packet Tracer and GNS3, and building practical blue-team skills through SIEM tools, log analysis, and incident response labs. Focused on identifying and responding to threats with clear, structured analysis.</span></p>
+    </section>
+  </div>
+  <!-- الصورة الشخصية -->
+  <img class="photo" alt="Mohamed Ahmed Abdelaziz" src="images/profile.jpg">
+</main>
+<div class="divider" aria-hidden="true"><i class="ln"><b></b></i></div>
+<section id="about">
+  <div class="abox" id="abox">
+    <h2>About me</h2>
+    <p aria-label="I am Mohamed Ahmed Abdelaziz, Electronics and Communications Engineering (ECE) student with a strong interest in Cybersecurity, currently focusing on the Security Operations Center (SOC) track. Building hands-on skills in Network Security, SIEM, Incident Response, and Threat Detection through continuous learning and certifications such as CCNA and Cisco Security Fundamentals. Passionate about problem-solving and seeking opportunities to grow in Blue Team and Security Operations"><span id="at" aria-hidden="true"></span><span id="ar" aria-hidden="true">I am Mohamed Ahmed Abdelaziz, Electronics and Communications Engineering (ECE) student with a strong interest in Cybersecurity, currently focusing on the Security Operations Center (SOC) track. Building hands-on skills in Network Security, SIEM, Incident Response, and Threat Detection through continuous learning and certifications such as CCNA and Cisco Security Fundamentals. Passionate about problem-solving and seeking opportunities to grow in Blue Team and Security Operations</span></p>
+  </div>
+</section>
+<div class="divider" aria-hidden="true"><i class="ln"><b></b></i></div>
+<section id="skills">
+  <h2 class="sk-title">Skills &amp; Expertise</h2>
+  <div class="sk-grid">
+<div class="grp" style="--g:0"><h3>Networking</h3><ul><li class="chip" style="--i:0">TCP/IP</li><li class="chip" style="--i:1">VLANs</li><li class="chip" style="--i:2">Routing &amp; Switching</li><li class="chip" style="--i:3">DNS</li><li class="chip" style="--i:4">DHCP</li></ul></div>
+<div class="grp" style="--g:1"><h3>Cybersecurity &amp; SOC</h3><ul><li class="chip" style="--i:5">SOC Monitoring</li><li class="chip" style="--i:6">SIEM</li><li class="chip" style="--i:7">Incident Response</li><li class="chip" style="--i:8">Network Security</li><li class="chip" style="--i:9">Log Analysis</li></ul></div>
+<div class="grp" style="--g:2"><h3>Tools &amp; Platforms</h3><ul><li class="chip" style="--i:10">Wireshark</li><li class="chip" style="--i:11">Nmap</li><li class="chip" style="--i:12">Wazuh</li><li class="chip" style="--i:13">Splunk</li><li class="chip" style="--i:14">Sysmon</li><li class="chip" style="--i:15">Windows Event Viewer</li><li class="chip" style="--i:16">TryHackMe</li><li class="chip" style="--i:17">CyberDefenders</li><li class="chip" style="--i:18">Windows / Linux</li></ul></div>
+  </div>
+</section>
+<div class="divider" aria-hidden="true"><i class="ln"><b></b></i></div>
+<section id="edu">
+  <h2 class="sk-title">Experience &amp; Education</h2>
+  <article class="edu-entry">
+    <p class="edu-when">Since July 2026</p>
+    <h3>Cyber Security Incident Response Analyst — Infrastructure &amp; Security Track</h3>
+    <p class="edu-school">Digital Egypt Pioneers Initiative (DEPI)</p>
+    <ul>
+      <li>Training in SOC operations and incident response as part of a structured cybersecurity track</li>
+      <li>Practicing hands-on threat detection and analysis through TryHackMe and CyberDefenders labs</li>
+      <li>Building practical skills in identifying, investigating, and responding to security incidents</li>
+    </ul>
+  </article>
+  <article class="edu-entry">
+    <p class="edu-when">Fifth-year student · Expected 2028</p>
+    <h3>Electronics and Communications Engineering</h3>
+    <p class="edu-school">Misr Higher Institute for Engineering and Technology (MET)</p>
+    <ul>
+      <li>Solid foundation in core engineering and networking concepts</li>
+      <li>Hands-on programming skills in C++ and Python, plus web development with HTML, CSS, and JavaScript</li>
+      <li>Focused on network security, SOC operations, and Linux to pursue a career as a SOC Analyst</li>
+    </ul>
+  </article>
+</section>
+<div class="divider" aria-hidden="true"><i class="ln"><b></b></i></div>
+<section id="labs">
+  <h2 class="sk-title">Practical Experience — Labs &amp; Projects</h2>
+  <div class="lab">
+    <pre class="term" aria-hidden="true"><span class="ok">[OK]</span> alert triaged
+<span class="warn">[WARN]</span> auth failure x5
+<span class="warn">[WARN]</span> suspicious process spawned
+[LOG] parsing sysmon event id 1
+<span class="ok">[OK]</span> IOC matched, investigating
+[LOG] correlating events in SIEM
+<span class="warn">[ALERT]</span> outbound traffic to unknown IP
+<span class="ok">[OK]</span> incident documented &amp; closed</pre>
+    <div class="lab-body">
+      <h3>SOC Level 1 — Detection &amp; Incident Response Labs</h3>
+      <p>Hands-on SOC Level 1 labs on TryHackMe and CyberDefenders, working through realistic monitoring and investigation scenarios.</p>
+      <ul class="pts">
+        <li>Analyzed logs and alerts to identify indicators of compromise</li>
+        <li>Practiced triaging and investigating simulated security incidents end-to-end</li>
+        <li>Used SIEM and log-analysis tools to trace and document incident timelines</li>
+      </ul>
+      <ul class="tags"><li>TryHackMe</li><li>CyberDefenders</li><li>SIEM</li><li>Log Analysis</li></ul>
+    </div>
+  </div>
+</section>
+<div class="divider" aria-hidden="true"><i class="ln"><b></b></i></div>
+<section id="certs">
+  <h2 class="sk-title">Courses &amp; Certifications</h2>
+  <div class="cert">
+    <!-- صورة الشهادة -->
+    <img class="cert-img" alt="Certificate of Training in Network Infrastructure from ITIDA and NTI" src="images/cert.jpg">
+    <div class="cert-body">
+      <h3>Network Infrastructure — Summer Training</h3>
+      <p class="cert-place">ITIDA &amp; National Telecommunication Institute (NTI)</p>
+      <p class="cert-when">31 August – 25 September 2025</p>
+      <h4>Technical topics</h4>
+      <ul class="tags">
+        <li>IPv4/IPv6 Addressing &amp; Subnetting</li><li>VLANs &amp; Switching</li><li>OSPF Routing</li><li>DHCP &amp; DNS</li><li>NAT, PAT &amp; ACLs</li><li>Network Troubleshooting</li>
+      </ul>
+      <h4>Soft skills</h4>
+      <p class="cert-soft">Communication, teamwork, presentation and time management, problem-solving</p>
+    </div>
+  </div>
+</section>
+<div class="divider" aria-hidden="true"><i class="ln"><b></b></i></div>
+<section id="contact">
+  <h2 class="sk-title">Let's work together</h2>
+  <p class="ct-lead">Open to SOC Analyst and cybersecurity opportunities — reach out directly or connect on LinkedIn.</p>
+  <div class="ct-list">
+    <a class="ct" href="mailto:ma0381854@gmail.com"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><span class="ct-t"><b>Email</b><span>ma0381854@gmail.com</span></span></a>
+    <a class="ct" href="tel:+201030165239"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span class="ct-t"><b>Phone</b><span>01030165239</span></span></a>
+    <a class="ct" href="https://www.linkedin.com/in/mohamed-ahmed-22930933a" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span><span class="ct-t"><b>LinkedIn</b><span>linkedin.com/in/mohamed-ahmed-22930933a</span></span></a>
+  </div>
+</section>
+<footer class="foot">© 2026 Mohamed Ahmed Abdelaziz</footer>
+<script>
+(function(){
+  var c=document.getElementById('bg'),x=c.getContext('2d'),log=document.getElementById('log');
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W,H,N,nodes=[],D=150,ang=0,CX,CYc,R,hx=document.createElement('canvas');
+  var CY='63,208,224',RD='255,77,94',GR='46,230,166',busy=0;
+  function hexGrid(){
+    var h=hx.getContext('2d'),s=30,w=s*1.732,r=window.devicePixelRatio||1;
+    hx.width=W*r;hx.height=H*r;h.setTransform(r,0,0,r,0,0);
+    h.strokeStyle='rgba('+CY+',.06)';h.lineWidth=1;
+    for(var row=0;row*s*1.5<H+s;row++)for(var col=0;col*w<W+w;col++){
+      var cx=col*w+(row%2?w/2:0),cy=row*s*1.5;h.beginPath();
+      for(var k=0;k<6;k++){var a=Math.PI/3*k+Math.PI/6;h.lineTo(cx+s*.95*Math.cos(a),cy+s*.95*Math.sin(a));}
+      h.closePath();h.stroke();
+    }
+  }
+  function size(){
+    var r=window.devicePixelRatio||1;W=innerWidth;H=innerHeight;
+    c.width=W*r;c.height=H*r;x.setTransform(r,0,0,r,0,0);
+    CX=W*.7;CYc=H*.45;R=Math.max(W,H)*.9;
+    N=Math.min(60,Math.floor(W*H/20000));nodes=[];
+    for(var i=0;i<N;i++)nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.22,vy:(Math.random()-.5)*.22,s:0,t:0,lit:0});
+    hexGrid();
+  }
+  function raise(){
+    if(busy)return;
+    var cand=nodes.filter(function(n){return !n.s});if(!cand.length)return;
+    var n=cand[Math.floor(Math.random()*cand.length)];n.s=1;n.t=0;busy=1;
+    log.textContent='[THREAT] intrusion detected — host-'+(10+Math.floor(Math.random()*80));
+  }
+  function frame(){
+    x.clearRect(0,0,W,H);x.drawImage(hx,0,0,W,H);
+    var i,j,k;
+    x.lineWidth=1;
+    for(k=1;k<=5;k++){x.strokeStyle='rgba('+CY+',.07)';x.beginPath();x.arc(CX,CYc,k*Math.min(W,H)*.22,0,6.283);x.stroke();}
+    for(k=0;k<26;k++){x.fillStyle='rgba('+CY+','+(.12*(1-k/26))+')';x.beginPath();x.moveTo(CX,CYc);x.arc(CX,CYc,R,ang-(k+1)*.022,ang-k*.022);x.closePath();x.fill();}
+    x.strokeStyle='rgba('+CY+',.35)';x.beginPath();x.moveTo(CX,CYc);x.lineTo(CX+R*Math.cos(ang),CYc+R*Math.sin(ang));x.stroke();
+    for(i=0;i<N;i++)for(j=i+1;j<N;j++){
+      var a=nodes[i],b=nodes[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<D){
+        var col=(a.s==1||b.s==1)?RD:(a.s==2||b.s==2)?GR:CY,o=(1-d/D)*.3;
+        x.strokeStyle='rgba('+col+','+o+')';x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();
+      }
+    }
+    for(i=0;i<N;i++){
+      var n=nodes[i];n.x+=n.vx;n.y+=n.vy;
+      if(n.x<0||n.x>W)n.vx*=-1;if(n.y<0||n.y>H)n.vy*=-1;
+      var na=Math.atan2(n.y-CYc,n.x-CX),df=Math.abs(((na-ang)%6.283+9.425)%6.283-3.1416);
+      if(df<.06)n.lit=1;if(n.lit>0)n.lit-=.012;
+      if(n.s==1){
+        n.t+=.006;
+        for(k=0;k<2;k++){var q=(n.t*3+k*.5)%1;x.strokeStyle='rgba('+RD+','+(1-q)*.8+')';x.beginPath();x.arc(n.x,n.y,4+q*30,0,6.283);x.stroke();}
+        x.fillStyle='rgba('+RD+',1)';x.beginPath();x.arc(n.x,n.y,3.4,0,6.283);x.fill();
+        if(n.t>1){n.s=2;n.t=0;log.textContent='[BLOCKED] malicious source isolated';}
+      }else if(n.s==2){
+        n.t+=.008;var g=1-n.t;
+        x.strokeStyle='rgba('+GR+','+g+')';x.lineWidth=1.5;x.beginPath();
+        for(k=0;k<6;k++){var h=Math.PI/3*k+Math.PI/6;x.lineTo(n.x+11*Math.cos(h),n.y+11*Math.sin(h));}
+        x.closePath();x.stroke();x.lineWidth=1;
+        x.fillStyle='rgba('+GR+','+(.5+g*.5)+')';x.beginPath();x.arc(n.x,n.y,2.6,0,6.283);x.fill();
+        if(n.t>1){n.s=0;n.t=0;busy=0;log.textContent='monitoring network…';}
+      }else{
+        x.fillStyle='rgba('+CY+','+(.35+Math.max(n.lit,0)*.65)+')';
+        x.beginPath();x.arc(n.x,n.y,2+Math.max(n.lit,0)*1.2,0,6.283);x.fill();
+      }
+    }
+    ang+=.012;if(ang>6.283)ang-=6.283;
+    if(Math.random()<.006)raise();
+    if(!reduce)requestAnimationFrame(frame);
+  }
+  size();addEventListener('resize',size);
+  frame();
+})();
+
+(function(){
+  var t=document.getElementById('t'),r=document.getElementById('r'),sum=document.getElementById('sum');
+  var full=r.textContent,i=0;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){t.textContent=full;r.textContent='';sum.className+=' done';return;}
+  function tick(){
+    i+=2;if(i>full.length)i=full.length;
+    t.textContent=full.slice(0,i);r.textContent=full.slice(i);
+    if(i<full.length){var ch=full.charAt(i-1);setTimeout(tick,/[.,]/.test(ch)?140:16);}
+    else{sum.className+=' done';}
+  }
+  setTimeout(tick,1300);
+})();
+
+(function(){
+  var box=document.getElementById('abox'),t=document.getElementById('at'),r=document.getElementById('ar');
+  var full=r.textContent,i=0,started=false;
+  function show(){box.className+=' in';}
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){show();t.textContent=full;r.textContent='';box.className+=' done';return;}
+  function tick(){
+    i+=2;if(i>full.length)i=full.length;
+    t.textContent=full.slice(0,i);r.textContent=full.slice(i);
+    if(i<full.length){setTimeout(tick,/[.,]/.test(full.charAt(i-1))?140:16);}else{box.className+=' done';}
+  }
+  new IntersectionObserver(function(e,o){
+    if(e[0].isIntersecting&&!started){started=true;o.disconnect();show();setTimeout(tick,700);}
+  },{threshold:.35}).observe(box);
+})();
+
+(function(){
+  var sk=document.getElementById('skills');
+  if(!('IntersectionObserver' in window)){sk.className+=' in';return;}
+  new IntersectionObserver(function(e,o){if(e[0].isIntersecting){sk.className+=' in';o.disconnect();}},{threshold:.25}).observe(sk);
+})();
+
+(function(){
+  var ds=document.querySelectorAll('.divider');
+  if(!('IntersectionObserver' in window)){for(var i=0;i<ds.length;i++)ds[i].className+=' in';return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.className+=' in';io.unobserve(e.target);}});},{threshold:.6});
+  for(var j=0;j<ds.length;j++)io.observe(ds[j]);
+})();
+
+(function(){
+  var ed=document.getElementById('edu');
+  if(!('IntersectionObserver' in window)){ed.className+=' in';return;}
+  new IntersectionObserver(function(e,o){if(e[0].isIntersecting){ed.className+=' in';o.disconnect();}},{threshold:.25}).observe(ed);
+})();
+
+(function(){
+  var lb=document.getElementById('labs');
+  if(!('IntersectionObserver' in window)){lb.className+=' in';return;}
+  new IntersectionObserver(function(e,o){if(e[0].isIntersecting){lb.className+=' in';o.disconnect();}},{threshold:.25}).observe(lb);
+})();
+
+(function(){
+  var ce=document.getElementById('certs');
+  if(!('IntersectionObserver' in window)){ce.className+=' in';return;}
+  new IntersectionObserver(function(e,o){if(e[0].isIntersecting){ce.className+=' in';o.disconnect();}},{threshold:.2}).observe(ce);
+})();
+</script>
+</body>
+</html>
